@@ -28,24 +28,24 @@ function randomPokemon1(){
 
 function createPokemon(pokemon){
 
-    const flipCard = document.createElement("div");
-    flipCard.classList.add("flip-card");
+    const backCard = document.createElement("div");
+    backCard.classList.add("flip-card");
 
     const cardContainer = document.createElement("div");
     cardContainer.classList.add("card-container");
 
-    flipCard.appendChild(cardContainer);
+    backCard.appendChild(cardContainer);
 
     const card = document.createElement("div");
     card.classList.add("pokemon-block");
 
-    const spriteContainer = document.createElement("div");
-    spriteContainer.classList.add("img-container");
+    const imgContainer = document.createElement("div");
+    imgContainer.classList.add("img-container");
 
     const sprite = document.createElement("img");
     sprite.src = pokemon.sprites.front_default;
 
-    spriteContainer.appendChild(sprite);
+    imgContainer.appendChild(sprite);
 
     const number = document.createElement("p");
     number.textContent = `#${pokemon.id.toString().padStart(3, 0)}`;
@@ -54,7 +54,7 @@ function createPokemon(pokemon){
     name.classList.add("name");
     name.textContent = pokemon.name;
 
-    card.appendChild(spriteContainer);
+    card.appendChild(imgContainer);
     card.appendChild(number);
     card.appendChild(name);
 
@@ -64,7 +64,7 @@ function createPokemon(pokemon){
 
     cardContainer.appendChild(card);
     cardContainer.appendChild(cardBack);
-    pokemonContainer.appendChild(flipCard);
+    pokemonContainer.appendChild(backCard);
 }
 
 function progressPercents(stats) {
@@ -77,7 +77,7 @@ function progressPercents(stats) {
         
       const stat = stats[i];
   
-      const statPercent = stat.base_stat + "%";
+      const percentStat = stat.base_stat + "%";
       const statContainer = document.createElement("stat-container");
       statContainer.classList.add("stat-container");
   
@@ -90,7 +90,7 @@ function progressPercents(stats) {
   
       const progressPercent = document.createElement("div");
       progressPercent.classList.add("progress-percent");
-      progressPercent.textContent = statPercent;
+      progressPercent.textContent = percentStat;
   
       progress.appendChild(progressPercent);
       statContainer.appendChild(statName);
