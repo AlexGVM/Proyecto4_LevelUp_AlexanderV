@@ -19,7 +19,7 @@ function apiPokemon(id) {
 function randomPokemon1(){
     spinner.style.display = "block";
     for (let i = 0; i < 6 ; i++){
-        numIdPokemon1.push(Math.floor(Math.random()*905))
+        numIdPokemon1.push(Math.floor(Math.random()*890))
     }
     numIdPokemon1.forEach(x => {
         apiPokemon(x);
